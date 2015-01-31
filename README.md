@@ -6,6 +6,6 @@
 
 Recursive deep copy, clone, and shallow copy functions for typescript/javascript
 
-Based on [deep-copy-ts](https://github.com/ghatchue/deep-copy-ts)
+Based on [deep-copy-js](https://github.com/ghatchue/deep-copy-js)
 
 MIT and LGPL licenses available.
