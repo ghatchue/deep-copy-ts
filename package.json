@@ -1,0 +1,59 @@
+{
+  "name": "deep-copy-ts",
+  "description": "Recursive deep copy, clone, and shallow copy functions for typescript/javascript",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ghatchue/deep-copy-ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghatchue/deep-copy-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ghatchue/deep-copy-ts/issues"
+  },
+  "licenses": [
+    {
+      "type": "LGPL",
+      "url": "https://github.com/ghatchue/deep-copy-ts/blob/master/LICENSE.txt"
+    },
+    {
+      "type": "MIT",
+      "url": "https://github.com/ghatchue/deep-copy-ts/blob/master/LICENSE.txt"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-karma": "^0.8.0",
+    "grunt-newer": "^0.7.0",
+    "grunt-ts": "^2.0.1",
+    "grunt-tslint": "^1.0.1",
+    "jshint-stylish": "^0.2.0",
+    "karma": "^0.12.0",
+    "karma-chrome-launcher": "^0.1.2",
+    "karma-coverage": "^0.2.7",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-ie-launcher": "^0.1",
+    "karma-jasmine": "^0.1.5",
+    "karma-mocha-reporter": "^0.3.1",
+    "karma-phantomjs-launcher": "^0.1.2",
+    "karma-requirejs": "^0.2.1",
+    "karma-safari-launcher": "^0.1",
+    "karma-sauce-launcher": "^0.2.5",
+    "karma-script-launcher": "^0.1.0",
+    "karma-sinon": "^1.0.2",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "typescript": "^1.3.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "npm install && grunt",
+    "test": "test $TRAVIS_PULL_REQUEST != false && test $BROWSER != phantomjs || grunt default:travis --verbose"
+  }
+}

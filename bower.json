@@ -1,0 +1,17 @@
+{
+  "name": "deep-copy-ts",
+  "version": "1.0.0",
+  "main": [
+    "dist/deepCopy.js",
+    "dist/deepCopy.ts"
+    ],
+  "ignore": [
+    "**/.*",
+    "*.md",
+    "test",
+    "src",
+    "Gruntfile.js",
+    "tslint.json",
+    "package.json"
+  ]
+}
