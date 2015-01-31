@@ -87,7 +87,7 @@ module.exports = function (grunt) {
         sauceLabs: {
           username: process.env.SAUCE_USERNAME,
           accessKey: process.env.SAUCE_ACCESS_KEY,
-          testName: 'deep-copy-js, browser: ' + process.env.BROWSER
+          testName: 'deep-copy-ts, browser: ' + process.env.BROWSER
         },
         reporters: ['saucelabs', 'coverage', 'mocha'],
         customLaunchers: JSON.parse(fs.readFileSync('test/browsers.json'))
