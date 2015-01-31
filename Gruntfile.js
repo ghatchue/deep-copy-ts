@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     ts: {
       main: {
         files: [{
-          src: ['src/deepCopy.ts'],
+          src: ['dist/deepCopy.ts'],
           dest: 'dist/deepCopy.js'
         }],
         options: {
@@ -122,7 +122,7 @@ module.exports = function (grunt) {
   });
 
   var usePhantom = process.env.TRAVIS_PULL_REQUEST !== 'false' || process.env.BROWSER === 'phantomjs';
-  var tasks = ['newer:tslint', 'newer:jshint', 'ts', 'copy', 'uglify'];
+  var tasks = ['newer:tslint', 'newer:jshint', 'copy', 'ts', 'uglify'];
   var travisTasks = usePhantom ? tasks.concat('karma:continuous') : tasks.concat('karma:sauceTask');
   var distTasks = tasks.concat(['karma:dist', 'karma:distMin']);
 
