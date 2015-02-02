@@ -24,7 +24,8 @@ module.exports = function (grunt) {
           fast: 'never',
           declaration: true,
           sourceMap: true,
-          comments: true
+          comments: true,
+          target: 'es3'
         }
       }
     },
