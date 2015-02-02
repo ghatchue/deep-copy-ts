@@ -23,7 +23,8 @@ module.exports = function (grunt) {
           compiler: 'node_modules/typescript/bin/tsc',
           fast: 'never',
           declaration: true,
-          sourceMap: true
+          sourceMap: true,
+          comments: true
         }
       }
     },
