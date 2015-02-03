@@ -62,7 +62,7 @@ module owl {
     }
 
     // Utility function to Indicate if the object is a wrapper object for a native type
-    function isNativeTypeWrapper(object: any): any {
+    function isNativeTypeWrapper(object: any): boolean {
         // We could use the check below, but it can easily fail for objects
         // that override the valueOf function.
         //return object !== null && typeof object === 'object' && object !== object.valueOf();
@@ -117,9 +117,6 @@ module owl {
         }
     }
 
-    // publicly expose the list of deepCopiers.
-    export var deepCopiers: deepCopy.IDeepCopier[] = [];
-
     // entry point for deep copy.
     //   source is the object to be deep copied.
     //   maxDepth is an optional recursion limit. Defaults to 256.
@@ -173,6 +170,10 @@ module owl {
                 // no-op
             }
         }
+
+        // publicly expose the list of deepCopiers.
+        export var deepCopiers: deepCopy.IDeepCopier[] = [];
+
     }
 
     export class DeepCopyAlgorithm {
@@ -241,8 +242,8 @@ module owl {
             // objects may need special handling depending on their class.  There is
             // a class of handlers call "DeepCopiers"  that know how to copy certain
             // objects.  There is also a final, generic deep copier that can handle any object.
-            for ( var i: number = 0; i < deepCopiers.length; i++ ) {
-                var deepCopier = deepCopiers[i];
+            for ( var i: number = 0; i < deepCopy.deepCopiers.length; i++ ) {
+                var deepCopier = deepCopy.deepCopiers[i];
                 if ( deepCopier.canCopy(source) ) {
                     return this.applyDeepCopier(deepCopier, source);
                 }

@@ -1,7 +1,6 @@
 declare module owl {
     function clone(target: any): any;
     function copy(target: any): any;
-    var deepCopiers: deepCopy.IDeepCopier[];
     function deepCopy(source: any, maxDepth: number): any;
     module deepCopy {
         interface IDeepCopier {
@@ -15,6 +14,7 @@ declare module owl {
             create(source: any): any;
             populate(deepCopyAlgorithm: (source: any) => any, source: any, result: any): any;
         }
+        var deepCopiers: deepCopy.IDeepCopier[];
     }
     class DeepCopyAlgorithm {
         copiedObjects: any[];

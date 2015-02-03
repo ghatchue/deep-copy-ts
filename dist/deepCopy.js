@@ -105,8 +105,6 @@ var owl;
         }
     }
     owl.copy = copy;
-    // publicly expose the list of deepCopiers.
-    owl.deepCopiers = [];
     // entry point for deep copy.
     //   source is the object to be deep copied.
     //   maxDepth is an optional recursion limit. Defaults to 256.
@@ -140,6 +138,8 @@ var owl;
             return DeepCopier;
         })();
         deepCopy.DeepCopier = DeepCopier;
+        // publicly expose the list of deepCopiers.
+        deepCopy.deepCopiers = [];
     })(deepCopy = owl.deepCopy || (owl.deepCopy = {}));
     var DeepCopyAlgorithm = (function () {
         function DeepCopyAlgorithm() {
@@ -189,8 +189,8 @@ var owl;
             if (cachedResult) {
                 return cachedResult;
             }
-            for (var i = 0; i < owl.deepCopiers.length; i++) {
-                var deepCopier = owl.deepCopiers[i];
+            for (var i = 0; i < deepCopy.deepCopiers.length; i++) {
+                var deepCopier = deepCopy.deepCopiers[i];
                 if (deepCopier.canCopy(source)) {
                     return this.applyDeepCopier(deepCopier, source);
                 }
@@ -230,7 +230,7 @@ var owl;
             if (!(deepCopier instanceof deepCopy.DeepCopier)) {
                 deepCopier = new deepCopy.DeepCopier(deepCopier);
             }
-            owl.deepCopiers.unshift(deepCopier);
+            deepCopy.deepCopiers.unshift(deepCopier);
         }
         deepCopy.register = register;
     })(deepCopy = owl.deepCopy || (owl.deepCopy = {}));
